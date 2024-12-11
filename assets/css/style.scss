@@ -830,3 +830,65 @@ footer {
     }
   }
 }
+
+.contact_section {
+  background: url("/assets/images/contact.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.783);
+  background-blend-mode: multiply;
+  padding: 8rem 0 4rem;
+  h3 {
+    color: $main;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+  }
+  .contact-form {
+    .form-group {
+      margin-top: 1rem;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      label {
+        color: $white;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+      input,
+      select,
+      textarea {
+        padding: 1rem 0;
+        direction: rtl;
+        border-bottom: 1px solid $white;
+        color: $white;
+        font-size: 14px;
+        &::placeholder {
+          color: #ffffff80;
+        }
+      }
+      textarea {
+        height: 140px;
+      }
+    }
+    button {
+      width: 100%;
+      padding: 0.75rem 3rem;
+      border-radius: 5rem;
+      background: $main;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: $white;
+      margin-top: 24px;
+      width: fit-content;
+    }
+  }
+}
+
+.map_section {
+  margin-bottom: -14px;
+}
