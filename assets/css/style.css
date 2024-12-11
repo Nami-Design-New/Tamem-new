@@ -138,7 +138,7 @@ header {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.5019607843);
+  background: #fff;
   -webkit-backdrop-filter: blur(24px);
           backdrop-filter: blur(24px);
 }
@@ -229,6 +229,38 @@ header nav .actions .menu-button {
   header nav .actions .menu-button {
     display: block;
   }
+}
+
+main {
+  min-height: 100vh;
+}
+
+.header_section {
+  height: 45vh;
+  background: url("/assets/images/header.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  padding: 2rem 0;
+}
+.header_section .container {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.header_section .container h1 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+.header_section .container p {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0;
 }
 
 .hero_section {
@@ -571,7 +603,7 @@ header nav .actions .menu-button {
   position: absolute;
   width: 100%;
   height: 100%;
-  border: 10px solid #b6956a;
+  border: 10px solid #eee;
 }
 .faq_section .img img {
   width: 100%;
@@ -670,6 +702,39 @@ header nav .actions .menu-button {
 }
 .contact_us_section .contacts_grid .contact_item .info a:hover {
   color: #b6956a;
+}
+
+.certificates_section {
+  padding: 4rem 0;
+  background: #faf7f4;
+}
+.certificates_section .certificate-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 1rem;
+  height: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.certificates_section .certificate-card img {
+  height: 60px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.certificates_section .certificate-card h6 {
+  color: #000;
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 700;
+}
+.certificates_section .certificate-card p {
+  color: #777;
+  font-size: 0.85rem;
+  text-align: center;
+  margin: 0;
 }
 
 footer {
@@ -848,4 +913,55 @@ footer .social_links a:hover {
   color: #fff;
   background: #b6956a;
   border-color: #b6956a;
+}
+
+.services_section {
+  padding: 4rem 0;
+}
+.services_section .service_card {
+  position: relative;
+}
+.services_section .service_card img {
+  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.services_section .service_card .content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: rgba(0, 0, 0, 0.7019607843);
+  border-radius: 1rem;
+}
+.services_section .service_card h3 {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.services_section .service_card p {
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.services_section .service_card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.services_section .service_card li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 500;
 }/*# sourceMappingURL=style.css.map */
