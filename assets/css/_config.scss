@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap");
+
+@mixin centerFlex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin centerAbsolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin clearInput {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
+:target {
+  scroll-margin-top: 100px;
+}
+
+.fancybox__container {
+  z-index: 1999;
+}
+
+.fancybox__track,
+.fancybox__content,
+.carousel__track {
+  direction: ltr !important;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--white-color-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  height: 300px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+$main: #b6956a;
+$main5: #faf7f4;
+$white: #fff;
+$gray: #777;
+$black: #000;
+$second: #11112d;
+
+body {
+  background: #fff;
+  overflow-x: hidden;
+  position: relative;
+  direction: rtl;
+  font-family: "El Messiri", sans-serif;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.row {
+  margin: 0;
+  padding: 0;
+}
+
+.elementor-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  h6 {
+    color: $black;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+  }
+  img {
+    height: 1rem;
+  }
+  &::before,
+  &::after {
+    content: "";
+    width: 2rem;
+    height: 1px;
+    background: #a69d8480;
+  }
+}
+
+.elementor-subtitle {
+  color: #777;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section_head {
+  width: 100%;
+  @include space-between();
+  .elementor-title {
+    justify-content: flex-start;
+  }
+  .elementor-subtitle {
+    text-align: start;
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    .elementor-title {
+      justify-content: center;
+    }
+    .elementor-subtitle {
+      text-align: center;
+    }
+  }
+}

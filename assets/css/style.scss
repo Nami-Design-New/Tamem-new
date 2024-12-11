@@ -1,0 +1,717 @@
+@import "./config";
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #ffffff80;
+  backdrop-filter: blur(24px);
+  &.scrolled {
+    background: $white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    .logo {
+      @include centerFlex();
+      img {
+        width: 52px;
+        height: 52px;
+        object-fit: contain;
+      }
+    }
+    .nav-links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2.5rem;
+      transition: all 0.4s ease-in-out;
+      z-index: 9;
+      li.hide_lg {
+        display: none;
+      }
+      @media screen and (max-width: 768px) {
+        padding: 2rem 1.5rem;
+        position: fixed;
+        background: $white;
+        height: 100vh;
+        top: 0;
+        right: -50%;
+        width: 50%;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 2rem;
+        align-items: flex-start;
+        li.hide_lg {
+          display: block;
+        }
+        &.active {
+          right: 0;
+        }
+      }
+      a {
+        color: $black;
+        font-weight: 500;
+      }
+    }
+    .layer {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+      height: 100vh;
+      &.active {
+        display: block;
+      }
+    }
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      button {
+        font-weight: 500;
+        font-size: 1.1rem;
+      }
+
+      .menu-button {
+        display: none;
+        @media screen and (max-width: 768px) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.hero_section {
+  height: 100vh;
+  position: relative;
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .content {
+    width: 100%;
+    height: calc(100vh - 76px);
+    transform: translateY(76px);
+    position: relative;
+    z-index: 1;
+    @include centerFlex();
+    background: linear-gradient(#00000085, #00000085);
+  }
+  .swiper-slide {
+    @include centerFlex();
+    flex-direction: column;
+    visibility: hidden;
+    gap: 0.5rem;
+    transition: all 0.5s ease-in-out;
+    transition-behavior: allow-discrete;
+    img {
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: $white;
+      text-align: center;
+      padding: 0 1rem;
+      i {
+        font-size: 1rem;
+      }
+    }
+    p {
+      text-align: center;
+      color: $white;
+      padding: 0 1rem;
+    }
+    &.swiper-slide-active {
+      visibility: visible;
+      img {
+        animation: fadeInUp 1s 0.5s both;
+      }
+      h1 {
+        animation: fadeInUp 1s 1s both;
+      }
+      p {
+        animation: fadeInUp 1s 1.5s both;
+      }
+    }
+  }
+}
+
+.statistics_section {
+  padding: 4rem 0;
+  background: $main5;
+  .counter-box {
+    @include centerFlex();
+    flex-direction: column;
+    h3 {
+      color: $main;
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    h4 {
+      color: $black;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+  }
+}
+
+.services_section {
+  padding: 4rem 0;
+  .swiper {
+    padding: 1rem;
+    .swiper-slide {
+      height: auto;
+    }
+  }
+
+  .service-card {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    gap: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    background: $white;
+    border-radius: 1rem;
+    height: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    .image-wrapper {
+      @include centerFlex();
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 2px solid $main;
+      background: $white;
+      margin-bottom: 12px;
+      img {
+        width: 60%;
+        object-fit: contain;
+      }
+    }
+
+    h5 {
+      margin: 0;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: $main;
+    }
+    p {
+      color: $gray;
+      margin: 0;
+    }
+  }
+
+  .swiper-controls {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    height: 70px;
+
+    %button-base {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid #bebebe;
+      background: transparent;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.4s ease-in-out;
+      &:hover {
+        width: 65px;
+        height: 65px;
+        border-color: $main;
+      }
+    }
+
+    .service-button-prev {
+      @extend %button-base;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 42px;
+        height: 2px;
+        background: $black;
+        top: 50%;
+        left: 88%;
+        transform: translate(-20%, -50%);
+        transition: all 0.4s ease-in-out;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        border-right: 6px solid $black;
+        top: 50%;
+        left: calc(70% - 4px);
+        transform: translateY(-50%);
+        transition: all 0.4s ease-in-out;
+      }
+
+      &:hover {
+        &::before {
+          width: 36px;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        &::after {
+          left: calc(20% - 4px);
+        }
+      }
+    }
+
+    .service-button-next {
+      @extend %button-base;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 42px;
+        height: 2px;
+        background: $black;
+        top: 50%;
+        left: -12%;
+        transform: translate(-60%, -50%);
+        transition: all 0.4s ease-in-out;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        border-left: 6px solid $black;
+        top: 50%;
+        left: calc(30% - 4px);
+        transform: translateY(-50%);
+        transition: all 0.4s ease-in-out;
+      }
+
+      &:hover {
+        &::before {
+          width: 36px;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        &::after {
+          left: calc(80% - 4px);
+        }
+      }
+    }
+  }
+}
+
+.our_team_section {
+  padding: 4rem 0;
+  background: $main5;
+}
+
+.flipCard {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  perspective: 1000px;
+  user-select: none;
+
+  .cardFront {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    background-size: cover !important;
+    background-position: top !important;
+    background-repeat: no-repeat !important;
+    backface-visibility: hidden;
+    transform: rotateY(0deg);
+    transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    .content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-top: auto;
+      color: $white;
+      gap: 4px;
+      .title {
+        font-weight: bold;
+        color: $white;
+      }
+      .job {
+        color: $white;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .cardBack {
+    padding: 20px;
+    position: absolute;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 2rem 3rem #0000000d;
+    background-color: #fff;
+    .content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      img {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+        margin-bottom: 16px;
+      }
+      .title {
+        font-weight: bold;
+        color: var(--mainColor);
+        margin-bottom: 4px;
+      }
+      .job {
+        color: var(--grayColor);
+        font-size: 14px;
+        margin-bottom: 12px;
+        font-weight: bold;
+      }
+      .des {
+        color: var(--grayColor);
+        font-size: 14px;
+      }
+      a {
+        font-size: 1.5rem;
+        color: #0a66c2;
+      }
+    }
+  }
+
+  &:hover {
+    z-index: 2;
+    .cardFront {
+      transform: rotateY(-180deg);
+    }
+    .cardBack {
+      transform: rotateY(0deg);
+    }
+  }
+}
+
+.faq_section {
+  padding: 4rem 0;
+  .img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 10px solid $main;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 0 !important;
+    .accordion-button {
+      box-shadow: none !important;
+      background: transparent !important;
+      font-weight: 700;
+      &::after {
+        content: "\f176";
+        font-family: "Font Awesome 6 Pro";
+        color: $black;
+        font-size: 1rem;
+        font-weight: 400;
+        background: none !important;
+        transform: none !important;
+      }
+      &:not(.collapsed) {
+        color: $main;
+        &::after {
+          color: $main;
+          content: "\f175";
+        }
+      }
+    }
+    .accordion-item {
+      border-radius: 0 !important;
+      border: 0 !important;
+      border-bottom: 1px solid #dedede !important;
+    }
+  }
+}
+
+.our_clients_section {
+  padding: 4rem 0;
+  background: $main5;
+  .clients-swiper {
+    padding: 1rem;
+    .swiper-slide {
+      width: 100px;
+      height: 100px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+.contact_us_section {
+  padding: 4rem 0;
+  .contacts_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    .contact_item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding: 2rem 1rem;
+      &:nth-child(even) {
+        background: $main5;
+      }
+      i {
+        color: $black;
+        font-size: 2.5rem;
+      }
+      .info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        h6 {
+          color: $black;
+          font-size: 1.25rem;
+          text-align: center;
+        }
+        a {
+          color: $black;
+          font-size: 1rem;
+          text-align: center;
+          font-weight: 500;
+          transition: all 0.4s ease-in-out;
+          &:hover {
+            color: $main;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  padding: 6rem 0 0;
+  background-image: url("/assets/images/footer-image.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #2a2e31f2;
+  background-blend-mode: multiply;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    img {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+    }
+    h6 {
+      color: $white;
+      font-size: 1.25rem;
+      margin: 0;
+      font-weight: 700;
+    }
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-inline-start: 3rem;
+    width: fit-content;
+    @media screen and (max-width: 768px) {
+      padding-inline-start: 0;
+    }
+    h6 {
+      color: $white;
+      font-size: 1.25rem;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      li {
+        a {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          color: #bebebe;
+          font-size: 1rem;
+          font-weight: 500;
+          transition: all 0.4s ease-in-out;
+          &::before {
+            content: "\f177";
+            font-family: "Font Awesome 6 Pro";
+            color: $main;
+            font-size: 1rem;
+            width: 0;
+            transition: all 0.4s ease-in-out;
+            overflow: hidden;
+          }
+          &:hover {
+            &::before {
+              width: 16px;
+            }
+            color: $main;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-text {
+    color: $white;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    h6 {
+      color: $white;
+      font-size: 1.25rem;
+      margin: 0;
+      font-weight: 700;
+    }
+    p {
+      color: $white;
+      font-size: 0.85rem;
+      margin: 0 0 1rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      input {
+        width: 100%;
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+        border: 1px solid $white;
+        direction: rtl;
+        color: $white;
+        &::placeholder {
+          color: $white;
+        }
+      }
+      button {
+        width: 100%;
+        padding: 0.75rem 3rem;
+        border-radius: 5rem;
+        background: $main;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        color: $white;
+        width: fit-content;
+      }
+    }
+  }
+
+  .copy_rights {
+    @include space-between();
+    padding: 1.5rem 0 1rem;
+    margin-top: 2rem;
+    border-top: 1px solid #ffffff40;
+    @media screen and (max-width: 768px) {
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 1rem;
+    }
+    p {
+      color: $white;
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: center;
+      margin: 0;
+      a {
+        color: $main;
+      }
+    }
+  }
+
+  .social_links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    a {
+      color: $white;
+      font-size: 0.85rem;
+      width: 38px;
+      height: 38px;
+      @include centerFlex();
+      border-radius: 50%;
+      border: 1px solid $white;
+      transition: all 0.4s ease-in-out;
+      &:hover {
+        transform: scale(1.1);
+        color: $white;
+        background: $main;
+        border-color: $main;
+      }
+    }
+  }
+}
