@@ -139,3 +139,54 @@ menuButton.addEventListener("click", () => {
   navLinks.classList.toggle("active");
   layer.classList.toggle("active");
 });
+
+$(document).ready(function () {
+  $(".preloader").delay(1000).fadeOut(300);
+
+  $("section").each(function () {
+    const sectionDivs = $(this).find("[data-aos]");
+    sectionDivs.each(function (index) {
+      if (!$(this).attr("data-aos-delay")) {
+        $(this).attr("data-aos-delay", (index + 1) * 100);
+      }
+    });
+  });
+
+  AOS.init({
+    offset: 20,
+    delay: 50,
+    duration: 750,
+    once: true,
+  });
+
+  const observer = lozad(".lazy", {
+    loaded: function (el) {
+      el.parentNode.classList.add("loaded");
+    },
+  });
+
+  observer.observe();
+
+  var parallaxImage = document.getElementsByClassName("parallax");
+  new simpleParallax(parallaxImage, {
+    delay: 1,
+    transition: "cubic-bezier(0,0,0,1)",
+  });
+
+  const counterUp = window.counterUp.default;
+  const callback = (entries) => {
+    entries.forEach((entry) => {
+      const el = entry.target;
+      if (entry.isIntersecting && !el.classList.contains("is-visible")) {
+        counterUp(el, {
+          duration: 3000,
+          delay: 16,
+        });
+        el.classList.add("is-visible");
+      }
+    });
+  };
+  const IO = new IntersectionObserver(callback, { threshold: 1 });
+  const elements = document.querySelectorAll(".counterUp");
+  elements.forEach((el) => IO.observe(el));
+});
