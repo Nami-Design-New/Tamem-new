@@ -78,6 +78,7 @@ header {
       align-items: center;
       gap: 12px;
       button {
+        color: $black;
         font-weight: 500;
         font-size: 1.1rem;
       }
@@ -98,7 +99,7 @@ main {
 
 .header_section {
   height: 45vh;
-  background: url("/assets/images/header.png");
+  background: url("../images/header.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -610,7 +611,7 @@ main {
 
 footer {
   padding: 6rem 0 0;
-  background-image: url("/assets/images/footer-image.jpg");
+  background-image: url("../images/footer-image.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -832,7 +833,7 @@ footer {
 }
 
 .contact_section {
-  background: url("/assets/images/contact.png");
+  background: url("../images/contact.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
