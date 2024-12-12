@@ -190,6 +190,10 @@ textarea {
   }
 }
 
+a[href*=tel] {
+  direction: ltr;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -1242,6 +1246,11 @@ footer .social_links a:hover {
 .values_section {
   padding: 6rem 0;
 }
+@media screen and (max-width: 768px) {
+  .values_section {
+    padding: 3rem 0;
+  }
+}
 .values_section .value_card {
   padding: 1.5rem;
   display: flex;
@@ -1250,6 +1259,11 @@ footer .social_links a:hover {
   background: #faf7f4;
   border: 1px solid #b6956a;
   border-radius: 1rem;
+}
+@media screen and (max-width: 768px) {
+  .values_section .value_card {
+    margin-top: 3rem;
+  }
 }
 .values_section .value_card .icon {
   width: 100px;
@@ -1415,8 +1429,4 @@ footer .social_links a:hover {
 }
 .blog_details .recent_blogs ul li a:hover h4 {
   color: #b6956a;
-}
-
-a[href*=tel] {
-  direction: ltr;
 }/*# sourceMappingURL=style.css.map */

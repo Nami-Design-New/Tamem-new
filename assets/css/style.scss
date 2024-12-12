@@ -1044,6 +1044,9 @@ footer {
 
 .values_section {
   padding: 6rem 0;
+  @media screen and (max-width: 768px) {
+    padding: 3rem 0;
+  }
   .value_card {
     padding: 1.5rem;
     display: flex;
@@ -1052,6 +1055,9 @@ footer {
     background: $main5;
     border: 1px solid $main;
     border-radius: 1rem;
+    @media screen and (max-width: 768px) {
+      margin-top: 3rem;
+    }
     .icon {
       width: 100px;
       height: 100px;
@@ -1225,8 +1231,4 @@ footer {
       }
     }
   }
-}
-
-a[href*="tel"] {
-  direction: ltr;
 }

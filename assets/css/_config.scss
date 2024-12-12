@@ -218,3 +218,7 @@ textarea {
     }
   }
 }
+
+a[href*="tel"] {
+  direction: ltr;
+}
