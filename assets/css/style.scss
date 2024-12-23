@@ -1238,3 +1238,41 @@ footer {
     }
   }
 }
+
+.achievements {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  gap: 1rem;
+
+  .achievement-item {
+    text-align: center;
+    flex: 1;
+    padding: 1.5rem;
+    background: #1f2126;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      background: #b6956a;
+
+      h3, p {
+        color: #fff;
+      }
+    }
+
+    h3 {
+      color: #b6956a;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: #fff;
+      font-size: 1rem;
+      margin: 0;
+    }
+  }
+}
