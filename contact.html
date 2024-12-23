@@ -9,14 +9,14 @@
 
     <!-- SEO: Description, Keywords, Author, and Robots -->
     <meta name="description"
-        content="مكتب تميم الحسينان للمحاماة والاستشارات القانونية - خدمات قانونية احترافية وحلول متكاملة في المملكة العربية السعودية" />
+        content="شركة تميم الحسينان للمحاماة والاستشارات القانونية - خدمات قانونية احترافية وحلول متكاملة في المملكة العربية السعودية" />
     <meta name="keywords"
-        content="محاماة، استشارات قانونية، تميم الحسينان، محامي، السعودية، خدمات قانونية، مكتب محاماة" />
-    <meta name="author" content="مكتب تميم الحسينان للمحاماة" />
+        content="محاماة، استشارات قانونية، تميم الحسينان، محامي، السعودية، خدمات قانونية، شركة محاماة" />
+    <meta name="author" content="شركة تميم الحسينان للمحاماة" />
     <meta name="robots" content="index, follow" />
 
     <!-- Open Graph Data for Social Media -->
-    <meta property="og:title" content="مكتب تميم الحسينان للمحاماة والاستشارات القانونية" />
+    <meta property="og:title" content="شركة تميم الحسينان للمحاماة والاستشارات القانونية" />
     <meta property="og:description"
         content="نقدم خدمات قانونية احترافية وحلول متكاملة تلبي احتياجات عملائنا في المملكة العربية السعودية" />
     <meta property="og:image" content="assets/images/logo.svg" />
@@ -25,7 +25,7 @@
 
     <!-- Twitter Card Data -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="مكتب تميم الحسينان للمحاماة والاستشارات القانونية" />
+    <meta name="twitter:title" content="شركة تميم الحسينان للمحاماة والاستشارات القانونية" />
     <meta name="twitter:description"
         content="نقدم خدمات قانونية احترافية وحلول متكاملة تلبي احتياجات عملائنا في المملكة العربية السعودية" />
     <meta name="twitter:image" content="assets/images/logo.svg" />
@@ -50,13 +50,13 @@
     <header>
         <nav class="container">
             <a href="index.html" class="logo">
-                <img src="assets/images/logo.svg" alt="مكتب تميم الحسينان للمحاماة" />
+                <img src="assets/images/logo.svg" alt="شركة تميم الحسينان للمحاماة" />
             </a>
 
             <ul class="nav-links">
                 <li class="hide_lg">
                     <a href="index.html">
-                        <img src="assets/images/logo.svg" alt="مكتب تميم الحسينان للمحاماة">
+                        <img src="assets/images/logo.svg" alt="شركة تميم الحسينان للمحاماة">
                     </a>
                 </li>
                 <li><a href="index.html">الرئيسية</a></li>
@@ -219,10 +219,6 @@
         </section>
 
         <section class="map_section">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571.6618880276233!2d50.1234269!3d26.4666256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49fba135ee1b95%3A0xceb0c8869422b88!2z2LTYsdmD2Kkg2KrZhdmK2YUg2KfZhNit2LPZitmG2KfZhiDZhNmE2YXYrdin2YXYp9ipINmI2KfZhNin2LPYqti02KfYsdin2Kog2KfZhNmC2KfZhtmI2YbZitip!5e0!3m2!1sar!2seg!4v1733941780264!5m2!1sar!2seg"
-                width="100%" height="300" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
         </section>
     </main>
 
@@ -232,8 +228,8 @@
 
                 <div class="col-lg-4 col-12 p-2">
                     <a href="index.html" class="logo">
-                        <img src="assets/images/logo.svg" alt="مكتب تميم الحسينان للمحاماة" />
-                        <h6>مكتب تميم الحسينان </h6>
+                        <img src="assets/images/logo.svg" alt="شركة تميم الحسينان للمحاماة" />
+                        <h6>شركة تميم الحسينان </h6>
                     </a>
 
                     <p class="footer-text">
@@ -274,7 +270,7 @@
                         <p>
                             ©
                             <script>document.write(new Date().getFullYear())</script>
-                            جميع الحقوق محفوظة لـ <a href="index.html">مكتب تميم الحسينان للمحاماة</a>
+                            جميع الحقوق محفوظة لـ <a href="index.html">شركة تميم الحسينان للمحاماة</a>
                         </p>
 
                         <div class="social_links">
@@ -295,11 +291,60 @@
                 </div>
             </div>
         </div>
-        </div>
-
     </footer>
+
+    <script>
+        let locationMap
+
+        function initMap() {
+            const location = { lat: 26.466626, lng: 50.123427 };
+            locationMap = new google.maps.Map(document.querySelector(".map_section"), {
+                center: location,
+                zoom: 16,
+                styles: [
+                    { "elementType": "geometry", "stylers": [{ "color": "#1f2126" }] },
+                    { "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] },
+                    { "elementType": "labels.text.fill", "stylers": [{ "color": "#757575" }] },
+                    { "elementType": "labels.text.stroke", "stylers": [{ "color": "#1f2126" }] },
+                    { "featureType": "administrative", "elementType": "geometry", "stylers": [{ "color": "#757575" }] },
+                    { "featureType": "road", "elementType": "geometry", "stylers": [{ "color": "#b6956a" }]},
+                    { "featureType": "water", "elementType": "geometry", "stylers": [{ "color": "#000000" }] },
+                    { "featureType": "water", "elementType": "labels.text.fill", "stylers": [{ "color": "#3d3d3d" }] }
+                ],
+                mapTypeControl: false,
+                streetViewControl: false,
+                fullscreenControl: true,
+                zoomControl: true,
+                scaleControl: false
+            });
+
+            // Add marker
+            const marker = new google.maps.Marker({
+                position: location,
+                map: locationMap,
+                title: "شركة تميم الحسينان للمحاماة",
+                animation: google.maps.Animation.DROP
+            });
+
+            // Add info window
+            const infoWindow = new google.maps.InfoWindow({
+                content: '<div style="text-align: right; direction: rtl; padding: 5px;">' +
+                    '<h5 style="margin: 0 0 5px 0;">شركة تميم الحسينان للمحاماة</h5>' +
+                    '<p style="margin: 0;">مركز المحمل التجاري، شارع الأمير محمد بن فهد، الدمام</p>' +
+                    '</div>'
+            });
+
+            // Open info window when marker is clicked
+            marker.addListener('click', () => {
+                infoWindow.open(locationMap, marker);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", initMap);
+    </script>
 </body>
 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbazTEugbVa6nosp0-21SCtN-GHSSQd2s"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/app.js?v=1"></script>
 
