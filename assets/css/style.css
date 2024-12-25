@@ -87,21 +87,38 @@ textarea {
   justify-content: center;
   gap: 0.75rem;
   margin-bottom: 0.75rem;
+  position: relative;
 }
 .elementor-title h6 {
   color: #000;
   font-size: 2.5rem;
   font-weight: 700;
+  position: relative;
   margin: 0;
+}
+.elementor-title h6::before {
+  content: "";
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/images/logo.svg");
+  filter: grayscale(1);
+  opacity: 0.15;
+  position: absolute;
+  top: -12px;
+  background-size: contain;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .elementor-title img {
   height: 1rem;
+  display: none;
 }
-.elementor-title::before, .elementor-title::after {
+.elementor-title::before {
   content: "";
   width: 2rem;
   height: 1px;
   background: rgba(166, 157, 132, 0.5019607843);
+  display: none;
 }
 
 .elementor-subtitle {
