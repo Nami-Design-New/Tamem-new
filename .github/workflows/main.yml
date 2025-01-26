@@ -21,4 +21,4 @@ jobs:
           username: u501520601.designforge-ui.com
           password: V@ekepSX5qM7!#$
           port: 21
-          server-dir : tamem-new/
+          server-dir: ${{ github.event.repository.name }}/
